@@ -1,21 +1,3 @@
-// This example scans and then connects to a specific Bluetooth peripheral
-// that can provide the Heart Rate Service (HRS).
-//
-// Once connected, it subscribes to notifications for the data value, and
-// displays it.
-//
-// To run this on a desktop system:
-//
-//	go run ./examples/heartrate-monitor EE:74:7D:C9:2A:68
-//
-// To run this on a microcontroller, change the constant value in the file
-// "mcu.go" to set the MAC address of the device you want to discover.
-// Then, flash to the microcontroller board like this:
-//
-//	tinygo flash -o circuitplay-bluefruit ./examples/heartrate-monitor
-//
-// Once the program is flashed to the board, connect to the USB port
-// via serial to view the output.
 package main
 
 import (

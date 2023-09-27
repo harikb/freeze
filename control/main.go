@@ -1,6 +1,3 @@
-// This example is intended to be used with the Adafruit Circuitplay Bluefruit board.
-// It allows you to control the color of the built-in NeoPixel LEDS while they animate
-// in a circular pattern.
 package main
 
 import (
