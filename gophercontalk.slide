@@ -1,0 +1,103 @@
+# Freeze
+A tinygo & arduino based meeting muter with a twist!
+27 Sep 2023
+Tags: tinygo, Go, Arduino
+Summary: This is a great document you want to read.
+OldURL: former-path-for-this-doc
+
+Hari Bhaskaran
+Adobe
+hari@adobe.com
+https://github.com/harikb
+@yetanotherfella
+
+## Meetings from home - all timezones
+
+**"Dinner is ready"**: What we expect to happen
+
+.image slide_resources/firefly01.jpg 500 700
+
+## State of working from home
+
+What really happens - I embarrass my partner
+
+.image slide_resources/firefly02.jpg 500 700
+
+
+## Solution: Easily accessible meeting muter
+
+Existing solutions:
+
+- Hardware button acts as a "Keyboard"
+- Sends "Ctrl+Shift+M" (say, for Teams)
+
+.image slide_resources/firefly03.jpg 300 400
+
+## Better Solution: Control mic input volume
+
+- Agent running on Mac
+- Mute button on a paired Bluetooth gadget
+- We can write it all in Go :)
+- It is fun to play with Go on tiny devices!
+
+.image slide_resources/arduino_itsybitsy_01.jpg 400 700
+
+## Why (Tiny)Go?
+
+Anything but the most simple "LED blinking" hello-world requires **multi-tasking**
+
+.code slide_resources/code_samples/arduino_in_c.c 
+
+## Why (Tiny)Go?
+
+TingyGo can use goroutines and channels
+
+.code slide_resources/code_samples/tinygo_goroutines.go 
+
+## Bluetooth Basics
+
+- One side is "Central" and other side is "Peripheral"
+- Peripheral advertizes capabilities (to everyone)
+- Central "Scans" and finds all advertizing devices
+- Once connected, data flow can be bidirectional
+
+## Bluetooth Basics
+
+Advertizement Payload must include some custom identifiers
+
+.code slide_resources/code_samples/tinygo_advertizement.go 
+
+## Bluetooth Basics
+
+Central will scan and identify the compatible devices
+
+.code slide_resources/code_samples/tinygo_scan.go 
+
+## Bluetooth Basics
+
+- Once connected, you would select a "Service" and within it a "Characteristic"
+- You can send and receive any sequence of bytes
+- "It is up to the application to interpret and have abstractions.
+
+.code slide_resources/code_samples/tinygo_readwrite.go 
+
+## Freeze - the sequence of interactions
+
+.image slide_resources/TinyGo-Freeze-Setup.png 500 700
+
+## Freeze - Demo
+
+.video slide_resources/freeze.mp4 video/mp4 600 _ 
+
+## Where to find it?
+
+https://github.com/harikb/freeze  (POC)
+
+Also checkout my other projects
+
+- https://github.com/adobe/ferry
+    - A raw kv lookup tool for FoundationDB
+- https://github.com/adobe/blackhole
+    - A utility to capture API traffic or benchmark HTTP egress
+
+
